@@ -1,0 +1,218 @@
+/*
+
+  Welcome to Robi's style sheet!
+
+  This import below is for the font.
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+/*
+
+  This section serves to create some global variables.
+  They're only for color.
+
+*/
+
+:root{
+
+  --primary: #3b6406;
+  --secondary: #476837;
+  --error: #f71010;
+
+}
+
+/* 
+
+  The following style are more or less GLOBAL stylings. 
+  This is nice for me because I can have a base that will style everything.
+  If I like it and it works, I'll keep it.
+  However, it leaves experimentation easy!
+  I can just change things later to be different and still have something to build off of.
+
+*/
+body {
+
+  font-family: 'Gugi', cursive;
+  color: var(--secondary);
+
+}
+
+.App { 
+
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+
+.title h1 {
+
+  color: rgb(83, 199, 93);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: normal;
+  font-family: 'Gugi', cursive;
+
+}
+
+.title h2, .title p {
+
+  text-align: center;
+
+}
+
+.title h2 {
+
+  margin-top: 60px;
+  font-size: 2.6rem;
+
+}
+
+/* 
+
+  These are styles for the upload form.
+  The main thing I want to ensure is that everything is centered and that it looks simple.
+
+*/
+
+form {
+
+  margin: 30px auto 10px;
+  text-align: center;
+
+}
+
+label input {
+
+  height: 0;
+  width: 0;
+  opacity: 0;
+
+}
+
+label {
+
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  margin: 10px auto;
+  line-height: 50px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+label:hover {
+
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+
+}
+
+.output {
+
+  height: 60px;
+  font-size: 0.8rem;
+
+}
+
+.error {
+
+  color: var(--error);
+
+}
+
+/* 
+
+  The section below is to style the progress bar!
+
+*/
+
+.progress-bar {
+
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+
+}
+
+/* 
+  Image grid styles
+
+  This is for the styling of all the pictures that are displayed on the screen.
+  Most of the time, images will be of different sizes.
+  It's nice to have some uniformity when it comes to pictures.
+
+*/
+
+.img-grid {
+
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  
+}
+
+.img-wrap {
+
+  position: relative;
+  padding: 50% 0;
+  height: 0;
+  opacity: .2;
+  overflow: hidden;
+
+}
+
+.img-wrap img {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  max-width: 150%;
+
+}
+
+
+/*
+
+  The section below is to style the Modal component.
+  It is used for viewing the pictures on the page.
+  The backdrop is the grey, shadowlike background behind the image.
+  This effect is useful! It helps boost the contrast on the viewport,
+  to help the image that is selected, stand out!
+
+*/
+
+.backdrop 
+{
+
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0 , 0, 0, .5);
+
+}
+
+.backdrop img 
+{
+
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0 , 0, 0, .5);
+  border: 3px solid white;
+
+}
